@@ -1,0 +1,20 @@
+role dev.fsm2::FSM_Role
+{
+schema dev.fsm2:FSM2.hdbschema: CREATE ANY, ALTER, DROP, EXECUTE, SELECT, INSERT, UPDATE, DELETE, INDEX, TRIGGER, DEBUG, REFERENCES;
+catalog sql object "FSM2"."dev.fsm2::fsmdata.Interventions": //Objecttype: TABLE
+	SELECT, INSERT, UPDATE, DELETE, TRIGGER, ALTER;
+catalog sql object "FSM2"."dev.fsm2::intervention_id_seq2": //Objecttype: SEQUENCE
+	SELECT;
+catalog sql object "FSM2"."dev.fsm2::new_intervention2": //Objecttype: PROCEDURE
+	EXECUTE, DEBUG;
+catalog sql object "FSM2"."dev.fsm2::fsmdata.Customers": //Objecttype: TABLE
+	SELECT, INSERT, UPDATE, DELETE, ALTER, DROP;
+catalog sql object "FSM2"."dev.fsm2::fsmdata.Data": //Objecttype: TABLE
+	INSERT, UPDATE, DELETE, SELECT, ALTER;
+catalog sql object "FSM2"."dev.fsm2::fsmdata.Products": //Objecttype: TABLE
+	ALTER, SELECT, INSERT, UPDATE, DELETE;
+catalog sql object "FSM2"."dev.fsm2::fsmdata.Suppliers": //Objecttype: TABLE
+	ALTER, SELECT, INSERT, UPDATE, DELETE;
+
+
+}

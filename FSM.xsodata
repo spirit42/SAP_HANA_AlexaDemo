@@ -1,0 +1,16 @@
+service {
+"SYSTEM"."Products" as "Products";
+"SYSTEM"."Interventions" as "Interventions";
+
+
+"SYSTEM"."Customers" as "Customers"
+	navigates ("CustomerProducts" as "Products", "CustomerInterventions" as "Interventions");
+
+	association "CustomerProducts"
+	principal "Customers"("CustomerID") multiplicity "1"
+	dependent "Products"("CustomerID") multiplicity "*";
+	
+	association "CustomerInterventions"
+	principal "Customers"("CustomerID") multiplicity "1"
+	dependent "Interventions"("CustomerID") multiplicity "*";
+}

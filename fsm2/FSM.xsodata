@@ -1,0 +1,19 @@
+service namespace "dev.fsm2" {
+"FSM2"."dev.fsm2::fsmdata.Data" as "HISTORY";
+"FSM2"."dev.fsm2::fsmdata.Data" as "DATA";
+"FSM2"."dev.fsm2::fsmdata.Interventions" as "interventions" create using "dev.fsm2::new_intervention2";
+"FSM2"."dev.fsm2::fsmdata.Products" as "products";
+
+"FSM2"."dev.fsm2::fsmdata.Customers" as "customers"
+	navigates ("CustomerProducts" as "products", "CustomerInterventions" as "interventions");
+
+	association "CustomerProducts"
+	principal "customers"("CustomerID") multiplicity "1"
+	dependent "products"("CustomerID") multiplicity "*";
+	
+	association "CustomerInterventions"
+	principal "customers"("CustomerID") multiplicity "1"
+	dependent "interventions"("CUSTOMERID") multiplicity "*";
+
+}
+

@@ -1,0 +1,5 @@
+service namespace "dev.tutorial" {
+"RMOTUT1"."dev.tutorial::mydata.Data" as "HISTORY";
+"RMOTUT1"."dev.tutorial::mydata.Data" as "DATA"
+create using "dev.tutorial::newdata";
+}

@@ -1,0 +1,11 @@
+==> Anonymous XS access 
+See tutorial : https://www.sap.com/developer/how-tos/2016/12/xsc-anonymous-connection.html
+
+"anonymous_connection" : "dev.fsm2::AnonConn",
+"authentication" : null,
+
+==> Basic Authentication
+"authentication": [{
+        "method": "Form"
+    }],
+"anonymous_connection" : null,

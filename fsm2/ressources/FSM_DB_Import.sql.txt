@@ -1,0 +1,14 @@
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Products" VALUES('P001','10001','fridge','WHIRLPOOL BSNF8101OX',489.99,'EUR','/images/P001.jpg','S001');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Products" VALUES('P002','10001','oven','iQ700 Compact oven CB675GB',990,'EUR','/images/P002.png','S002');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Products" VALUES('P003','10002','computer','ACER ASwift 3 SF314',512,'EUR','/images/P003.jpg','S001');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Products" VALUES('P004','10002','air conditioner','Symphony Diet 22i',200.48,'EUR','/images/P004.jpg','S003');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Products" VALUES('P005','10001','heater','chauffe-eau 10l avec indicateur LED',277.96,'EUR','/images/P005.jpg','S003');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Suppliers" VALUES('S001','Darty Paris 10eme','Paris','darty10Paris@darty.fr');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Suppliers" VALUES('S002','Siemens Online','Mannheim','siemens@test.com');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Suppliers" VALUES('S003','Northern Light','Denver','nl@test.com');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Customers" VALUES('10001','Barbaray','Laurence','48 Rue Leon Frot','Paris','75011','/images/C0001.jpg','black');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Customers" VALUES('10002','Durand','Michel','42 Rue Sorbier','Paris','75020','/images/C0002.jpg','white');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Technicians" VALUES('T001','Morisot','Remi','31 Rue Andre Joineau','Le Pre Saint Gervais','93310','Specialiste Frigorifique','/images/T001.jpg');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Technicians" VALUES('T002','Tell','Patrick','21 Rue des archives','Paris','75011','Specialiste Climatisation','/images/T002.jpg');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Interventions" VALUES('I00001','P001','C0001','T001','Reparation Frigo','Regulateur de temperature HS','','Assigned','2017-07-14 12:00:00','','/images/I00001.jpg');
+INSERT INTO "FSM2"."dev.fsm2::fsmdata.Interventions" VALUES('I00002','P002','C0002','T001','Reparation Chauffe Eau','Chute de pression constante. Sans doute en lien avec fuite','','Assigned','2017-07-14 11:00:00','','/images/I00002.jpg');

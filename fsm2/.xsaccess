@@ -1,0 +1,19 @@
+{
+    "exposed": true,
+    "anonymous_connection" : "dev.fsm2::AnonConn",
+    "authentication" : null,
+
+
+    "mime_mapping": [{
+        "extension": "jpg",
+        "mimetype": "image/jpeg"
+    }],
+    "force_ssl": false,
+    "enable_etags": true,
+    "prevent_xsrf": false,
+    "cors": [{
+        "enabled": false
+    }],
+    "cache_control": "no-cache, no-store",
+    "default_file": "index.html"
+}

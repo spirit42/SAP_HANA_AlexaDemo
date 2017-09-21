@@ -1,0 +1,143 @@
+namespace dev.fsm2;
+
+@Schema: 'FSM2'
+
+context fsmdata {
+type SDate : UTCTimestamp;
+type tt_error {
+ HTTP_STATUS_CODE: Integer;
+ ERROR_MESSAGE: String(100);
+ DETAIL: String(200);
+};
+
+type tt_details {
+ ID: Integer;
+TIMESTAMP: SDate;
+TEMPERATURE: Decimal(9,5);
+HUMIDITY: Double;
+BRIGHTNESS: Double;
+};
+
+@Catalog.tableType : #COLUMN
+Entity Data {
+key ID: Integer;
+TIMESTAMP: SDate;
+TEMPERATURE: Decimal(9,5);
+HUMIDITY: Double;
+BRIGHTNESS: Double;
+};
+
+@Catalog.tableType : #COLUMN
+Entity Products {
+key ProductID: String(20);
+CustomerID: String(20);
+Name: String(256);
+Description: String(256);
+Price: Decimal(10,4);
+CurrencyCode: String(3);
+PictureURL: String(256);
+SupplierID: String(20);
+};
+
+type t_product {
+ProductID: String(20);
+CustomerID: String(20);
+Name: String(256);
+Description: String(256);
+Price: Decimal(10,4);
+CurrencyCode: String(3);
+PictureURL: String(256);
+SupplierID: String(20);
+};
+
+@Catalog.tableType : #COLUMN
+Entity Suppliers {
+key SupplierID: String(20);
+SupplierName: String(256);
+Addresss: String(256);
+EmailAddress: String(256);
+}
+
+type t_supplier {
+SupplierID: String(20);
+SupplierName: String(256);
+Addresss: String(256);
+EmailAddress: String(256);
+};
+
+@Catalog.tableType : #COLUMN
+Entity Customers {
+key CustomerID: String(20);
+Name: String(256);
+FirstName: String(256);
+Street: String(256);
+City: String(256);
+PostalCode: String(256);
+PictureURL: String(256);
+PassCode: String(256);
+}
+
+type t_customer {
+CustomerID: String(20);
+Name: String(256);
+FirstName: String(256);
+Street: String(256);
+City: String(256);
+PostalCode: String(256);
+PictureURL: String(256);
+PassCode: String(256);
+};
+
+@Catalog.tableType : #COLUMN
+Entity Technicians {
+key TechnicianID: String(20);
+Name: String(256);
+FirstName: String(256);
+Street: String(256);
+City: String(256);
+PostalCode: String(256);
+PictureURL: String(256);
+JobDescription: String(256);
+}
+
+type t_technicians {
+Name: String(256);
+FirstName: String(256);
+Street: String(256);
+City: String(256);
+PostalCode: String(256);
+PictureURL: String(256);
+JobDescription: String(256);
+};
+
+@Catalog.tableType : #COLUMN
+Entity Interventions {
+key INTERVENTIONID: String(20);
+PRODUCTID: String(20);
+CUSTOMERID: String(20);
+TECHNICIANID: String(20);
+NAME: String(256);
+DESCRIPTION: String(256);
+REPORT: String(256);
+STATUS: String(256);
+STARTDATE: SDate;
+ENDDATE: SDate;
+PICTUREURL: String(256);
+}
+
+type t_intervention {
+INTERVENTIONID: String(20);
+PRODUCTID: String(20);
+CUSTOMERID: String(20);
+TECHNICIANID: String(20);
+NAME: String(256);
+DESCRIPTION: String(256);
+REPORT: String(256);
+STATUS: String(256);
+STARTDATE: SDate;
+ENDDATE: SDate;
+PICTUREURL: String(256);
+};
+
+
+};  

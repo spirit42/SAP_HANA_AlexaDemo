@@ -1,0 +1,12 @@
+role dev.tutorial::tutorial1
+{
+schema dev.tutorial:RMOTUT1.hdbschema: INSERT, SELECT, UPDATE, DELETE, CREATE ANY, EXECUTE, ALTER, DROP, INDEX, TRIGGER, DEBUG, REFERENCES;
+sql object dev.tutorial::rmotut1_id_seq: //Objecttype: SEQUENCE
+	SELECT, DROP, ALTER;
+catalog sql object "RMOTUT1"."dev.tutorial::mydata.Data": //Objecttype: TABLE
+	SELECT, INSERT, UPDATE, DELETE;
+catalog sql object "RMOTUT1"."dev.tutorial::newdata": //Objecttype: PROCEDURE
+	EXECUTE;
+
+
+}

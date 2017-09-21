@@ -1,0 +1,43 @@
+PROCEDURE "FSM2"."dev.fsm2::new_intervention2" (
+IN row FSM2."dev.fsm2::fsmdata.t_intervention",
+OUT error FSM2."dev.fsm2::fsmdata.tt_error" )  
+LANGUAGE SQLSCRIPT
+SQL SECURITY INVOKER
+DEFAULT SCHEMA FSM2
+AS
+BEGIN
+/*****************************
+Write your procedure logic
+*****************************/ 
+
+declare lv_productId string;
+declare lv_customerId string;
+declare lv_technicianId string;
+declare lv_name string;
+declare lv_description string;
+declare lv_report string;
+declare lv_status string;
+declare lv_pictureurl string;
+declare lv_test string;
+declare lv_startdate LONGDATE;
+
+select  PRODUCTID, 
+        CUSTOMERID, 
+        TECHNICIANID, 
+        NAME, 
+        DESCRIPTION, 
+        REPORT, 
+        STATUS,  
+        PICTUREURL, 
+        STARTDATE into lv_productId, lv_customerId, lv_technicianId, lv_name, lv_description, lv_report, lv_status, lv_pictureurl, lv_startdate from :row;
+
+if :lv_productId = '' then
+error = select 400 as http_status_code,
+'invalid Product for new Intervention' as error_message,
+  'Invalid response from sensor' as detail from dummy; 
+else
+insert into "dev.fsm2::fsmdata.Interventions" values (CAST("dev.fsm2::intervention_id_seq2".NEXTVAL AS VARCHAR(20)), CAST(lv_productId AS VARCHAR(20)), CAST(lv_customerId AS VARCHAR(20)), CAST(lv_technicianId AS VARCHAR(20)), CAST(lv_name AS VARCHAR(256)), CAST(lv_description AS VARCHAR(256)), CAST(lv_report AS VARCHAR(256)), CAST(lv_status AS VARCHAR(20)), now(), now(), CAST(lv_pictureurl AS VARCHAR(256)));
+
+end if;
+
+END;
